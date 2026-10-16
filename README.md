@@ -35,20 +35,20 @@ La **entrega 1** cubre los puntos 1 a 7: problema, ideación, ética, enfoque an
 
 | Ruta | Contenido |
 |---|---|
-| `README.md` | Este archivo |
-| `USO_IA.md` | Declaración del uso de IA: herramientas, prompts exactos y cómo se verificó cada parte |
-| `requirements.txt` | Dependencias de Python |
-| `.gitignore` | Excluye `data/`, porque los datos del Banco no se publican |
-| `data/raw/` | `Spend_FA_x_Transit_x_User_ID.xlsx`, la extracción de SmartBuy (no se sube al repositorio) |
-| `data/processed/` | `facturas_anonimizadas.parquet`, que genera el notebook (no se sube al repositorio) |
-| `notebooks/01_entendimiento_datos.ipynb` | Punto 6: EDA, calidad y suficiencia de los datos, ejecutado de principio a fin |
-| `notebooks/01_entendimiento_datos.html` | El mismo notebook en HTML, para leerlo sin Jupyter |
-| `docs/diccionario_datos.md` | Punto 5: diccionario de los 27 atributos y de las variables derivadas |
-| `docs/Reporte_entrega1.docx` |Word con el informe de la entrega|
-| `docs/Reporte_entrega1.PDF` |PDF con el informe de la entrega|
-| `docs/mockup/mockup.html` | Fuente HTML del mockup del tablero |
-| `docs/img/` | `mockup.png`, `fig_punto6.png` y `fig_hipotesis.png` |
-| `presentacion/Presentacion_Entrega1.pdf` | La misma presentación en PDF |
+| README.md | Este archivo |
+| USO_IA.md | Declaración del uso de IA: herramientas, prompts exactos y cómo se verificó cada parte |
+| requirements.txt | Dependencias de Python |
+| .gitignore | Excluye data/, porque los datos del Banco no se publican |
+| data/raw/ | Spend_FA_x_Transit_x_User_ID.xlsx, la extracción de SmartBuy (no se sube al repositorio) |
+| data/processed/ | facturas_anonimizadas.parquet, que genera el notebook (no se sube al repositorio) |
+| notebooks/01_entendimiento_datos.ipynb | Punto 6: EDA, calidad y suficiencia de los datos, ejecutado de principio a fin |
+| notebooks/01_entendimiento_datos.html | El mismo notebook en HTML, para leerlo sin Jupyter |
+| docs/diccionario_datos.md | Punto 5: diccionario de los 27 atributos y de las variables derivadas |
+| docs/Reporte_entrega1.docx |Word con el informe de la entrega|
+| docs/Reporte_entrega1.PDF |PDF con el informe de la entrega|
+| docs/mockup/mockup.html | Fuente HTML del mockup del tablero |
+| docs/img/ | mockup.png, fig_punto6.png y fig_hipotesis.png |
+| presentacion/Presentacion_Entrega1.pdf | La misma presentación en PDF |
 
 
 **Sustentación en video (máximo 6 minutos):** [enlace a YouTube] para ver el video en youtube
@@ -58,23 +58,23 @@ La **entrega 1** cubre los puntos 1 a 7: problema, ideación, ética, enfoque an
 1. Crear un entorno con Python 3.11 o superior e instalar las dependencias:
    bash
    pip install -r requirements.txt
-2. Copiar el archivo entregado por el Banco en `data/raw/Spend_FA_x_Transit_x_User_ID.xlsx`. No se publica por confidencialidad; ver el punto 3 del reporte.
+2. Copiar el archivo entregado por el Banco en data/raw/Spend_FA_x_Transit_x_User_ID.xlsx. No se publica por confidencialidad; ver el punto 3 del reporte.
 3. Ejecutar el notebook de principio a fin. También se puede abrir en Jupyter y correr todas las celdas.
 
    bash
    cd notebooks
    jupyter nbconvert --to notebook --execute --inplace 01_entendimiento_datos.ipynb
 
-   El notebook genera `data/processed/facturas_anonimizadas.parquet`. Parquet se usa porque es más eficiente cuando tenemos volumenes grandes de información
+   El notebook genera data/processed/facturas_anonimizadas.parquet. Parquet se usa porque es más eficiente cuando tenemos volumenes grandes de información
 
 **Orden de ejecución:** correr el notebook. El notebook corre en unos 35 segundos y no requiere conexión a internet.
 
 ## Dependencias
 
-Python 3.13 (probado), pandas 3.0, numpy 2.5, matplotlib 3.11, seaborn 0.13, scipy 1.18, statsmodels 0.15, scikit-learn 1.9, levenshtein 0.27, openpyxl 3.1, pyarrow y jupyter/nbconvert. Las versiones exactas están en `requirements.txt`.
+Python 3.13 (probado), pandas 3.0, numpy 2.5, matplotlib 3.11, seaborn 0.13, scipy 1.18, statsmodels 0.15, scikit-learn 1.9, levenshtein 0.27, openpyxl 3.1, pyarrow y jupyter/nbconvert. Las versiones exactas están en requirements.txt.
 
 ## Confidencialidad
 
 * Los datos son información interna del Banco y no se incluyen en este repositorio público.
-* El notebook reemplaza los nombres de personas y proveedores por seudónimos (`EMP_xxxxx`, `PROV_xxxx`) y elimina `User Login`, `User ID` y `Original Approver ID`.
+* El notebook reemplaza los nombres de personas y proveedores por seudónimos (EMP_xxxxx, PROV_xxxx) y elimina User Login, User ID y Original Approver ID.
 * Los números de factura solo se muestran como patrón (letra = A, dígito = 9).
