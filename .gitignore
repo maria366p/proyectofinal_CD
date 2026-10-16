@@ -1,0 +1,7 @@
+# Datos del Banco: confidenciales, no se publican
+data/
+# Archivos temporales
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Mockup monitor de gasto</title>
+<style>
+  :root{--ink:#1d2433;--muted:#667085;--line:#e4e7ec;--bg:#f5f6f8;--card:#fff;--accent:#2f5d8a;--accent2:#c8553d;--ok:#2e7d5b;--warn:#b7791f}
+  *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);font-size:13px}
+  .app{display:grid;grid-template-columns:190px 1fr;min-height:720px}
+  nav{background:#1f2a3a;color:#cfd6e2;padding:18px 14px}
+  nav h1{font-size:14px;color:#fff;margin:0 0 4px} nav p{margin:0 0 22px;font-size:11px;color:#93a0b5}
+  nav a{display:block;padding:9px 10px;border-radius:6px;color:#cfd6e2;text-decoration:none;margin-bottom:4px}
+  nav a.on{background:#2f3d52;color:#fff;font-weight:bold}
+  nav .tag{margin-top:26px;font-size:11px;color:#93a0b5;line-height:1.5}
+  main{padding:18px 22px}
+  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+  .top h2{margin:0;font-size:19px} .filters{display:flex;gap:8px}
+  .chip{border:1px solid var(--line);background:#fff;padding:6px 10px;border-radius:16px;color:var(--muted)}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+  .k{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .k .l{color:var(--muted);font-size:11.5px} .k .v{font-size:22px;font-weight:bold;margin-top:4px} .k .s{font-size:11px;color:var(--muted);margin-top:2px}
+  .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:12px;margin-bottom:12px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .card h3{margin:0 0 10px;font-size:13.5px}
+  .bars .row{display:grid;grid-template-columns:150px 1fr 60px;align-items:center;gap:8px;margin:5px 0;font-size:12px}
+  .bar{height:12px;background:var(--accent);border-radius:3px}
+  .pareto{height:150px;position:relative;border-left:1px solid var(--line);border-bottom:1px solid var(--line);margin:4px 0 6px 28px}
+  .note{font-size:11px;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th{text-align:left;color:var(--muted);font-weight:normal;border-bottom:1px solid var(--line);padding:6px 6px}
+  td{border-bottom:1px solid #f0f2f5;padding:7px 6px;vertical-align:middle}
+  .score{display:inline-block;min-width:38px;text-align:center;padding:2px 6px;border-radius:10px;color:#fff;font-weight:bold}
+  .hi{background:var(--accent2)} .md{background:var(--warn)} .lo{background:#8a96a8}
+  .why{color:var(--muted)} .btn{border:1px solid var(--line);background:#fff;border-radius:6px;padding:3px 8px;margin-right:4px;font-size:11.5px}
+  .btn.c{border-color:var(--accent2);color:var(--accent2)} .btn.d{color:var(--muted)}
+  .bottom{display:grid;grid-template-columns:1.6fr 1fr;gap:12px}
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+  .inv{border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:12px;line-height:1.6}
+  .inv b{display:block;margin-bottom:2px}
+  .match{color:var(--accent2);font-weight:bold}
+  .reasons li{margin:3px 0}
+  .api{font-family:monospace;font-size:11px;background:#f3f5f8;border-radius:6px;padding:6px 8px;margin-top:8px;color:#344054}
+</style>
+</head>
+<body>
+<div class="app">
+  <nav>
+    <h1>Monitor de gasto</h1>
+    <p>Procurement S2PA · el Banco</p>
+    <a class="on">Resumen del gasto</a>
+    <a>Cola de casos</a>
+    <a>Proveedores consolidados</a>
+    <a>Retroalimentación</a>
+    <div class="tag">Datos: SmartBuy<br>Actualización: semanal<br>Acceso restringido<br>Seudónimos activados</div>
+  </nav>
+  <main>
+    <div class="top">
+      <h2>Gasto aprobado y posibles duplicados</h2>
+      <div class="filters"><span class="chip">Periodo: sep-2024 – may-2026</span><span class="chip">Canal: todos</span><span class="chip">Entidad: todas</span><span class="chip">Categoría: todas</span></div>
+    </div>
+    <div class="kpis">
+      <div class="k"><div class="l">Gasto aprobado</div><div class="v">7.138 M CAD</div><div class="s">48.457 facturas</div></div>
+      <div class="k"><div class="l">Proveedores que explican el 80%</div><div class="v">150</div><div class="s">5,4% de 2.775 proveedores</div></div>
+      <div class="k"><div class="l">Casos abiertos por revisar</div><div class="v">312</div><div class="s">puntaje ≥ 0,70 · valor ilustrativo</div></div>
+      <div class="k"><div class="l">Monto en riesgo (casos abiertos)</div><div class="v">4,8 M CAD</div><div class="s">valor ilustrativo</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Concentración del gasto por proveedor consolidado</h3>
+        <svg width="100%" height="160" viewBox="0 0 520 160">
+          <line x1="30" y1="140" x2="510" y2="140" stroke="#e4e7ec"/><line x1="30" y1="10" x2="30" y2="140" stroke="#e4e7ec"/>
+          <line x1="30" y1="36" x2="510" y2="36" stroke="#c8553d" stroke-dasharray="4 3"/>
+          <text x="470" y="31" font-size="10" fill="#c8553d">80%</text>
+          <path d="M30 140 C 40 60, 52 45, 56 36 S 120 20, 200 15 S 400 11, 510 10" fill="none" stroke="#2f5d8a" stroke-width="2.5"/>
+          <line x1="56" y1="36" x2="56" y2="140" stroke="#c8553d" stroke-dasharray="4 3"/>
+          <text x="60" y="130" font-size="10" fill="#667085">150 proveedores</text>
+          <text x="34" y="156" font-size="10" fill="#667085">% acumulado de proveedores →</text>
+        </svg>
+        <div class="note">Los proveedores con varias llaves (mismo nombre normalizado) se suman antes de calcular la curva.</div>
+      </div>
+      <div class="card bars">
+        <h3>Gasto aprobado por categoría (M CAD)</h3>
+        <div class="row"><span>Sin categoría</span><div class="bar" style="width:100%"></div><span>2.504</span></div>
+        <div class="row"><span>IT Services</span><div class="bar" style="width:48%"></div><span>1.195</span></div>
+        <div class="row"><span>Software</span><div class="bar" style="width:36%"></div><span>897</span></div>
+        <div class="row"><span>Operations</span><div class="bar" style="width:29%"></div><span>717</span></div>
+        <div class="row"><span>HR / Personnel</span><div class="bar" style="width:22%"></div><span>551</span></div>
+        <div class="row"><span>Advertising &amp; Marketing</span><div class="bar" style="width:17%"></div><span>426</span></div>
+        <div class="note">Filtro por canal, entidad, transit y periodo.</div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="card">
+        <h3>Cola priorizada de posibles pagos duplicados</h3>
+        <table>
+          <tr><th>Caso</th><th>Proveedor</th><th>Facturas</th><th>Monto (CAD)</th><th>Días</th><th>Puntaje</th><th>Motivo principal</th><th>Acción</th></tr>
+          <tr><td>C-0412</td><td>PROV_0769</td><td>A999999 · A-99-9999</td><td>20.885</td><td>19</td><td><span class="score hi">0,94</span></td><td class="why">N.º casi idéntico + mismo monto, canales csp y sftp</td><td><span class="btn c">Confirmar</span><span class="btn d">Descartar</span></td></tr>
+          <tr><td>C-0409</td><td>PROV_0940</td><td>99999999 · 99999999 A</td><td>19.194</td><td>0</td><td><span class="score hi">0,91</span></td><td class="why">N.º casi idéntico + mismo monto + mismo transit</td><td><span class="btn c">Confirmar</span><span class="btn d">Descartar</span></td></tr>
+          <tr><td>C-0398</td><td>PROV_1528</td><td>2 facturas</td><td>48.140</td><td>3</td><td><span class="score md">0,78</span></td><td class="why">Mismo monto fuera de su periodicidad (30 días)</td><td><span class="btn c">Confirmar</span><span class="btn d">Descartar</span></td></tr>
+          <tr><td>C-0395</td><td>PROV_2210</td><td>3 facturas</td><td>15.600</td><td>0</td><td><span class="score md">0,72</span></td><td class="why">Mismo monto y día; mismo transit</td><td><span class="btn c">Confirmar</span><span class="btn d">Descartar</span></td></tr>
+          <tr><td>C-0390</td><td>PROV_0331</td><td>1 factura</td><td>2.410.000</td><td>—</td><td><span class="score lo">0,61</span></td><td class="why">Monto 4,2 desviaciones sobre su historia</td><td><span class="btn c">Confirmar</span><span class="btn d">Descartar</span></td></tr>
+        </table>
+        <div class="note" style="margin-top:6px">Valores ilustrativos. Cada decisión del analista se guarda como etiqueta para reentrenar el modelo.</div>
+      </div>
+      <div class="card">
+        <h3>Detalle del caso C-0412</h3>
+        <div class="cmp">
+          <div class="inv"><b>Factura A</b>Número: A999999<br>Canal: csp (portal)<br>Fecha: 03/06/2026<br>Monto: <span class="match">20.884,57 CAD</span><br>Transit: 9999X</div>
+          <div class="inv"><b>Factura B</b>Número: A-99-9999<br>Canal: sftp (carga)<br>Fecha: 22/06/2026<br>Monto: <span class="match">20.884,57 CAD</span><br>Transit: 9999X</div>
+        </div>
+        <ul class="reasons">
+          <li>Número normalizado idéntico (solo cambian guiones)</li>
+          <li>Mismo monto exacto y misma moneda</li>
+          <li>19 días: no coincide con la periodicidad del proveedor</li>
+          <li>Ingresó por dos canales distintos</li>
+        </ul>
+        <div class="api">GET /api/v1/casos?puntaje_min=0.7 · POST /api/v1/score {factura}</div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
