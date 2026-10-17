@@ -7,8 +7,8 @@ Proyecto final, entrega 1 · Universidad de los Andes
 | Nombre | Código |
 |---|---|
 | María Paula Ospina | 202123208 |
-| [Integrante 2] | [código] |
-| [Integrante 3] | [código] |
+| Andrés Camilo Beltrán | 202511522 |
+| Mateo Bernal Bonil | 202510037 |
 | [Integrante 4] | [código] |
 
 ## Alcance
