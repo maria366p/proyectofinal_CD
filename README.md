@@ -9,7 +9,7 @@ Proyecto final, entrega 1 · Universidad de los Andes
 | María Paula Ospina | 202123208 |
 | Andrés Camilo Beltrán | 202511522 |
 | Mateo Bernal Bonil | 202510037 |
-| [Integrante 4] | [código] |
+| Jorge Aleks Acosta | 202324675 |
 
 ## Alcance
 
@@ -51,7 +51,7 @@ La **entrega 1** cubre los puntos 1 a 7: problema, ideación, ética, enfoque an
 | presentacion/Presentacion_Entrega1.pdf | La misma presentación en PDF |
 
 
-**Sustentación en video (máximo 6 minutos):** [enlace a YouTube] para ver el video en youtube
+**Sustentación en video (máximo 6 minutos):** https://www.youtube.com/watch?v=hz05oRIyAuU&feature=youtu.be para ver el video en youtube
 
 ## Instrucciones de ejecución
 
